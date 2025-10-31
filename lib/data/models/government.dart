@@ -1,5 +1,6 @@
+import 'package:equatable/equatable.dart';
 
-class Official {
+class Official extends Equatable {
   final String name;
   final String? position;
   final String? roleDescription;
@@ -8,7 +9,7 @@ class Official {
   final String? district;
   final int? appointmentYear;
 
-  Official({
+  const Official({
     required this.name,
     this.position,
     this.roleDescription,
@@ -29,4 +30,15 @@ class Official {
       appointmentYear: json['appointment_year'],
     );
   }
+
+  @override
+  List<Object?> get props => [
+        name,
+        position,
+        roleDescription,
+        party,
+        profilePictureUrl,
+        district,
+        appointmentYear,
+      ];
 }

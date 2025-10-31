@@ -1,10 +1,10 @@
-
 import 'package:dio/dio.dart';
 import 'package:flutter_puertorico_mvvm/data/datasources/api_service.dart';
 import 'package:flutter_puertorico_mvvm/data/datasources/api_service_impl.dart';
 import 'package:flutter_puertorico_mvvm/data/repositories/repository_impl.dart';
 import 'package:flutter_puertorico_mvvm/domain/repositories/repository.dart';
 import 'package:flutter_puertorico_mvvm/domain/usecases/get_government_data.dart';
+import 'package:flutter_puertorico_mvvm/domain/usecases/get_home_categories.dart';
 import 'package:flutter_puertorico_mvvm/domain/usecases/get_municipalities.dart';
 import 'package:flutter_puertorico_mvvm/presentation/bloc/government_bloc.dart';
 import 'package:flutter_puertorico_mvvm/presentation/bloc/home_bloc.dart';
@@ -30,9 +30,10 @@ void setupLocator() {
   // Use Cases
   locator.registerLazySingleton(() => GetGovernmentData(locator()));
   locator.registerLazySingleton(() => GetMunicipalities(locator()));
+  locator.registerLazySingleton(() => GetHomeCategories(locator()));
 
   // BLoCs
-  locator.registerFactory(() => HomeBloc());
+  locator.registerFactory(() => HomeBloc(locator()));
   locator.registerFactory(() => GovernmentBloc(locator()));
   locator.registerFactory(() => MunicipalitiesBloc(locator()));
   locator.registerFactory(() => SchoolsBloc());

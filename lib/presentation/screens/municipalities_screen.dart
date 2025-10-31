@@ -44,12 +44,10 @@ class MunicipalitiesScreen extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: [
                           Expanded(
-                            child: municipality.flag != null
-                                ? NetworkSvg(
-                                    url: municipality.flag!,
+                            child: NetworkSvg(
+                                    url: municipality.flagUrl,
                                     fit: BoxFit.cover,
                                   )
-                                : const Icon(Icons.flag, size: 50, color: Colors.grey),
                           ),
                           Padding(
                             padding: const EdgeInsets.all(8.0),

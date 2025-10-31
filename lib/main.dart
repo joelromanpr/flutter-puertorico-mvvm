@@ -1,7 +1,7 @@
 
 import 'package:flutter/material.dart';
-import 'package:flutter_puertorico_mvvm/di/locator.dart';
-import 'package:flutter_puertorico_mvvm/navigation/app_router.dart';
+import 'package:flutter_puertorico_mvvm/core/di/locator.dart';
+import 'package:flutter_puertorico_mvvm/core/navigation/app_router.dart';
 
 void main() {
   setupLocator();

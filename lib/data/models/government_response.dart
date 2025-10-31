@@ -1,13 +1,13 @@
-
+import 'package:equatable/equatable.dart';
 import 'package:flutter_puertorico_mvvm/data/models/government.dart';
 
-class GovernmentResponse {
+class GovernmentResponse extends Equatable {
   final GovernmentBranch executiveBranch;
   final GovernmentBranch legislativeBranch;
   final GovernmentBranch judicialBranch;
   final GovernmentBranch federalRepresentation;
 
-  GovernmentResponse({
+  const GovernmentResponse({
     required this.executiveBranch,
     required this.legislativeBranch,
     required this.judicialBranch,
@@ -23,9 +23,17 @@ class GovernmentResponse {
           GovernmentBranch.fromJson(json['federal_representation'] ?? {}),
     );
   }
+
+  @override
+  List<Object?> get props => [
+        executiveBranch,
+        legislativeBranch,
+        judicialBranch,
+        federalRepresentation,
+      ];
 }
 
-class GovernmentBranch {
+class GovernmentBranch extends Equatable {
   final String name;
   final String description;
   final Official? governor;
@@ -35,7 +43,7 @@ class GovernmentBranch {
   final SupremeCourt? supremeCourt;
   final Official? residentCommissioner;
 
-  GovernmentBranch({
+  const GovernmentBranch({
     required this.name,
     required this.description,
     this.governor,
@@ -67,15 +75,27 @@ class GovernmentBranch {
           : null,
     );
   }
+
+  @override
+  List<Object?> get props => [
+        name,
+        description,
+        governor,
+        cabinet,
+        senate,
+        houseOfRepresentatives,
+        supremeCourt,
+        residentCommissioner,
+      ];
 }
 
-class Senate {
+class Senate extends Equatable {
   final String name;
   final String description;
   final List<Official> leadership;
   final List<Official> senators;
 
-  Senate({
+  const Senate({
     required this.name,
     required this.description,
     required this.leadership,
@@ -96,15 +116,18 @@ class Senate {
           [],
     );
   }
+
+  @override
+  List<Object?> get props => [name, description, leadership, senators];
 }
 
-class HouseOfRepresentatives {
+class HouseOfRepresentatives extends Equatable {
   final String name;
   final String description;
   final List<Official> leadership;
   final List<Official> representatives;
 
-  HouseOfRepresentatives({
+  const HouseOfRepresentatives({
     required this.name,
     required this.description,
     required this.leadership,
@@ -125,15 +148,18 @@ class HouseOfRepresentatives {
           [],
     );
   }
+
+  @override
+  List<Object?> get props => [name, description, leadership, representatives];
 }
 
-class SupremeCourt {
+class SupremeCourt extends Equatable {
   final String name;
   final String description;
   final Official chiefJustice;
   final List<Official> associateJustices;
 
-  SupremeCourt({
+  const SupremeCourt({
     required this.name,
     required this.description,
     required this.chiefJustice,
@@ -151,4 +177,7 @@ class SupremeCourt {
           [],
     );
   }
+
+  @override
+  List<Object?> get props => [name, description, chiefJustice, associateJustices];
 }
