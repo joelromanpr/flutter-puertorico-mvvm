@@ -1,5 +1,7 @@
 # Flutter Puerto Rico MVVM
 
+[![Flutter CI](https://github.com/joelromanpr/flutter-puertorico-mvvm/actions/workflows/ci.yaml/badge.svg)](https://github.com/joelromanpr/flutter-puertorico-mvvm/actions/workflows/ci.yaml)
+
 An educational Flutter cross-platform (Android/iOS) app showcasing the usage of several open-source building block libraries and a Clean Architecture approach with the MVVM pattern. This project is intended for students and professors to learn and teach modern mobile development practices.
 
 ## Architecture
@@ -37,7 +39,7 @@ This project uses the following open-source libraries:
 *   `get_it`: A service locator for Dart and Flutter projects with a focus on performance and ease of use.
 *   `go_router`: A declarative routing package for Flutter that makes it easy to handle navigation in the app.
 *   `flutter_svg`: A library for rendering SVG files in Flutter.
-*   `cached_network_image`: A Flutter library to show images from the internet and keep them in the cache directory.
+*   `cached_network_image`: A library for showing images from the internet and keep them in the cache directory.
 *   `equatable`: A Dart package that helps to implement value equality without explicitly overriding `==` and `hashCode`.
 *   `url_launcher`: A Flutter plugin for launching URLs.
 
@@ -45,11 +47,15 @@ This project uses the following open-source libraries:
 
 ### Android
 
-![Android Demo 1](screenshots/demo-1.png)
-![Android Demo 2](screenshots/demo-2.png)
-![Android Demo 3](screenshots/demo-3.png)
+<img src="screenshots/demo-1.png" alt="Android Demo 1" width="300"/>
+<img src="screenshots/demo-2.png" alt="Android Demo 2" width="300"/>
+<img src="screenshots/demo-3.png" alt="Android Demo 3" width="300"/>
 
 ### iPhone
 
-![iPhone Demo 1](screenshots/demo-iphone-1.png)
-![iPhone Demo 2](screenshots/demo-iphone-2.png)
+<img src="screenshots/demo-iphone-1.png" alt="iPhone Demo 1" width="300"/>
+<img src="screenshots/demo-iphone-2.png" alt="iPhone Demo 2" width="300"/>
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
